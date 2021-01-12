@@ -1,6 +1,6 @@
-import BaseAdvertising
+from BaseAdvertising import BaseAdvertising
 
-class Advertiser(BaseAdvertising.BaseAdvertising) :
+class Advertiser(BaseAdvertising) :
 
     __allAdvertisers = []
 

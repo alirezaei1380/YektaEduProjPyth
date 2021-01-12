@@ -1,6 +1,6 @@
-import BaseAdvertising
+from BaseAdvertising import BaseAdvertising
 
-class Ad(BaseAdvertising.BaseAdvertising) :
+class Ad(BaseAdvertising) :
 
     def __init__(self, id, title, imgUrl, link, advertiser):
         super(Ad, self).__init__()
