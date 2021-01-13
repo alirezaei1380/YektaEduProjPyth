@@ -23,4 +23,5 @@ class BaseAdvertising :
         self._views += 1
 
     def describeMe(self):
-        return "This class is designed to reduce duplicated code via inheritance."
+        return "Id: " + self._id.__str__() + ", views: " + self.views.__str__()\
+               + ", clicks: " + self.clicks.__str__() + ".\n"

@@ -45,8 +45,15 @@ Clicks shows how many clicks the advertisers has had,
 And views shows how many views the advertiser has had."""
 
     def describeMe(self):
-        return "This class stores some data and communicates(sets and gets) them and also" +\
-        "calculates the totalClicks of all advertisers."
+        description = super(Advertiser, self).describeMe()
+        description += ("Name: " + self.name + ", ads titles:")
+        if len(self._ads) == 0 :
+            description += " there are no ads yet."
+        else:
+            for ad in self._ads :
+                description += ("\n" + ad.title)
+            description += "."
+        return description
 
     def addAd(self, ad):
         self._ads.append(ad)

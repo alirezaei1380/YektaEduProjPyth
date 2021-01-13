@@ -37,4 +37,5 @@ class Ad(BaseAdvertising) :
         advertiser.addAd(self)
 
     def describeMe(self):
-        return "This class stores some data and communicates(sets and gets) them."
+        return super(Ad, self).describeMe() + "Title: " + self.title +\
+               ", imgUrl: " + self.imgUrl + ", link: " + self.link + "."
