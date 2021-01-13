@@ -1,6 +1,10 @@
 class BaseAdvertising :
 
+    _nextId = 1
+
     def __init__(self):
+        self._id = BaseAdvertising._nextId
+        BaseAdvertising._nextId += 1
         self._clicks = 0
         self._views = 0
 

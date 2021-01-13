@@ -2,9 +2,8 @@ from BaseAdvertising import BaseAdvertising
 
 class Ad(BaseAdvertising) :
 
-    def __init__(self, id, title, imgUrl, link, advertiser):
+    def __init__(self, title, imgUrl, link, advertiser):
         super(Ad, self).__init__()
-        self._id = id
         self._title = title
         self._imgUrl = imgUrl
         self._link = link

@@ -4,9 +4,8 @@ class Advertiser(BaseAdvertising) :
 
     _allAdvertisers = []
 
-    def __init__(self, id, name):
+    def __init__(self, name):
         super(Advertiser, self).__init__()
-        self._id = id
         self._name = name
         self._ads = []
         Advertiser._allAdvertisers.append(self)

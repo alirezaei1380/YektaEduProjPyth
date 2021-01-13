@@ -4,10 +4,10 @@ from Ad import Ad
 
 if __name__ == '__main__':
     baseAdvertising = BaseAdvertising()
-    advertiser1 = Advertiser(1, "name1")
-    advertiser2 = Advertiser(2, "name2")
-    ad1 = Ad(1, "title1", "img-url1", "link1", advertiser1)
-    ad2 = Ad(2, "title2", "img-url2", "link2", advertiser2)
+    advertiser1 = Advertiser("name1")
+    advertiser2 = Advertiser("name2")
+    ad1 = Ad("title1", "img-url1", "link1", advertiser1)
+    ad2 = Ad("title2", "img-url2", "link2", advertiser2)
     print(baseAdvertising.describeMe())
     print(ad2.describeMe())
     print(advertiser1.describeMe())
