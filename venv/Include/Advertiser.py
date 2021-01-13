@@ -2,48 +2,52 @@ from BaseAdvertising import BaseAdvertising
 
 class Advertiser(BaseAdvertising) :
 
-    __allAdvertisers = []
+    _allAdvertisers = []
 
     def __init__(self, id, name):
         super(Advertiser, self).__init__()
-        self.__id = id
-        self.__name = name
-        self.__ads = []
-        Advertiser.__allAdvertisers.append(self)
+        self._id = id
+        self._name = name
+        self._ads = []
+        Advertiser._allAdvertisers.append(self)
 
-    def getName(self):
-        return self.__name
+    @property
+    def name(self):
+        return self._name
 
-    def setName(self, name):
-        self.__name = name
+    @name.setter
+    def name(self, name):
+        self._name = name
 
-    def getClicks(self):
-        total = super(Advertiser, self).getClicks()
-        for ad in self.__ads :
-            total += ad.getClicks()
-        return total
+    @property
+    def clicks(self):
+        totalClicks = super(Advertiser, self).clicks
+        for ad in self._ads :
+            totalClicks += ad.clicks
+        return totalClicks
 
-    def getViews(self):
-        total = super(Advertiser, self).getViews()
-        for ad in self.__ads :
-            total += ad.getViews()
-        return total
+    @property
+    def views(self):
+        totalViews = super(Advertiser, self).views
+        for ad in self._ads :
+            totalViews += ad.views
+        return totalViews
 
     def getTotalClicks():
-        total = 0
-        for ad in Advertiser.__allAdvertisers :
-            total += ad.getClicks()
-        return total
+        totalClicks = 0
+        for ad in Advertiser._allAdvertisers :
+            totalClicks += ad.clicks
+        return totalClicks
 
     def help():
-        return "Id is a unique code for each object,\n" +\
-        "Name is obviously the name of the advertiser,\n" +\
-        "Clicks shows how many clicks the advertisers has had,\n" +\
-        "And views shows how many views the advertiser has had."
+        return"""Id is a unique code for each object,
+Name is obviously the name of the advertiser,
+Clicks shows how many clicks the advertisers has had,
+And views shows how many views the advertiser has had."""
 
     def describeMe(self):
         return "This class stores some data and communicates(sets and gets) them and also" +\
         "calculates the totalClicks of all advertisers."
 
     def addAd(self, ad):
-        self.__ads.append(ad)
+        self._ads.append(ad)

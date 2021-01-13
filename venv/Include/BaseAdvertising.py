@@ -1,20 +1,22 @@
 class BaseAdvertising :
 
     def __init__(self):
-        self.__clicks = 0
-        self.__views = 0
+        self._clicks = 0
+        self._views = 0
 
-    def getClicks(self):
-        return self.__clicks
+    @property
+    def clicks(self):
+        return self._clicks
 
-    def getViews(self):
-        return self.__views
+    @property
+    def views(self):
+        return self._views
 
     def incClicks(self):
-        self.__clicks += 1
+        self._clicks += 1
 
     def incViews(self):
-        self.__views += 1
+        self._views += 1
 
     def describeMe(self):
         return "This class is designed to reduce duplicated code via inheritance."

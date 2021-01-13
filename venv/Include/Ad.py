@@ -4,29 +4,35 @@ class Ad(BaseAdvertising) :
 
     def __init__(self, id, title, imgUrl, link, advertiser):
         super(Ad, self).__init__()
-        self.__id = id
-        self.__title = title
-        self.__imgUrl = imgUrl
-        self.__link = link
+        self._id = id
+        self._title = title
+        self._imgUrl = imgUrl
+        self._link = link
         self.setAdvertiser(advertiser)
 
-    def setTitle(self, title):
-        self.__title = title
+    @property
+    def title(self):
+        return self._title
 
-    def getTitle(self):
-        return self.__title
+    @title.setter
+    def title(self, title):
+        self._title = title
 
-    def setImgUrl(self, imgUrl):
-        self.__imgUrl = imgUrl
+    @property
+    def imgUrl(self):
+        return self._imgUrl
 
-    def getImgUrl(self):
-        return self.__imgUrl
+    @imgUrl.setter
+    def imgUrl(self, imgUrl):
+        self._imgUrl = imgUrl
 
-    def setLink(self, link):
-        self.__link = link
+    @property
+    def link(self):
+        return self._link
 
-    def getLink(self):
-        return self.__link
+    @link.setter
+    def link(self, link):
+        self._link = link
 
     def setAdvertiser(self, advertiser):
         advertiser.addAd(self)
